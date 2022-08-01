@@ -1,0 +1,152 @@
+<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdditionNotepad</title>
+
+    <style>
+body{
+    background-color: #fff;
+    line-height: 1.8;
+    text-align: center;
+  margin: auto;
+}
+
+    </style>
+</head>
+  
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+     <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="display" value="" />
+                </td>
+            </tr>
+       <tr>
+         <td>
+                    <input id="btnDiv" type="button" name="operator" value="÷" onclick="set('/')" />
+                </td>
+       <td>
+<input id="btn1" type="button" value="1" onclick="set('1')" />
+                </td>
+                <td><input id="btn2" type="button" value="2" onclick="set('2')" />
+                </td>
+                <td>
+<input id="btn3" type="button" value="3" onclick="set('3')" />
+                </td>
+       
+       </tr>
+    <tr>
+      <td>
+                    <input id="btnMul" type="button" name="operator" value="×" onclick="set('*')" />
+                </td>
+    <td>
+<input id="btn4" type="button" value="4" onclick="set('4')" />
+                </td>
+                <td><input id="btn5" type="button" value="5" onclick="set('5')" />
+                </td>
+                <td>
+<input id="btn6" type="button" value="6" onclick="set('6')" />
+                </td>
+    
+    </tr>
+       <tr>
+         <td>
+                    <input id="btnSub" type="button" name="operator" value="-" onclick="set('-')" />
+                </td><td>
+<input id="btn7" type="button" value="7" onclick="set('7')" />
+                </td>
+                <td><input id="btn8" type="button" value="8" onclick="set('8')" />
+                </td>
+                <td>
+<input id="btn9" type="button" value="9" onclick="set('9')" />
+                </td>
+  
+            </tr>
+  </tr>
+<tr>
+  <td>
+                    <input id="btnAdd" type="button" name="operator" value="+" onclick="set('+')" />
+                </td>
+  <td>
+                    <input id="btnCE" type="button" name="operator" value="CE" onclick="ce()" />
+                </td>
+  <td>
+<input id="btn0" type="button" value="0" onclick="set('0')" />
+                </td>
+  <td>
+                    <input id="btnEqual" type="button" name="equal" value="=" onclick="answer()" />
+  </td>
+   </table>
+    </body>
+    </html>
+    
+    <style>
+    table{
+ font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+    text-align: center;
+  margin: auto;
+  border-collapse: collapse;
+  width: 250px;
+}
+
+input[type=text]{
+  width: 95%;
+text-align: right;
+  border-color: gray;
+  border-width: 1px;
+  font-size: 1em;
+
+  
+}
+
+input[type=button]{
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+    text-align: center;
+  background-color: #fff;
+  border: none;
+  font-size: 1em;
+  width: 50px;
+  height: 30px;
+}
+input[type=button]:hover{font-weight: 700; 
+  background-color: #ddd;
+}
+</style>
+
+<script>
+function set(op) {
+
+    document.getElementById("display").value += op;
+
+}
+function setOp() {
+    alert("gf");
+    //document.getElementById("display").value += op;
+}
+function answer() {
+    var Exp = document.getElementById("display");
+    var Exp1 = Exp.value;
+    var result = eval(Exp1);
+    //alert(result);
+    Exp.value = result;
+}
+function ce() {
+
+    var elem = document.getElementById("display").value;
+    var length = elem.length;
+    length--;
+    var a = elem.substr(0, length);
+
+    // document.getElementById("display").value="";
+    //for(var i=0;i<length-1;i++)
+    //{
+    document.getElementById("display").value = a;
+    // }
+    //alert(length);
+}
+</script>
